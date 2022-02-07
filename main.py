@@ -21,10 +21,10 @@ top_frame.place(x=0, y=0)
 left_frame = Frame(
     root,
     bg='yellow', # Change  latter to black
-    width=255,
-    height=540
+    width=Utils.width_prct(25),
+    height=Utils.height_prct(75)
 )
-left_frame.place(x=0, y=180)
+left_frame.place(x=0, y=Utils.height_prct(25))
 
 # Run the window
 root.mainloop()
