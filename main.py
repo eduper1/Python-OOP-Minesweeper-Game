@@ -22,6 +22,7 @@ left_frame = Frame(
     width=255,
     height=540
 )
+left_frame.place(x=0, y=180)
 
 # Run the window
 root.mainloop()
