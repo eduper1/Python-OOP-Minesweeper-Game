@@ -14,7 +14,7 @@ root.resizable(False, False)
 top_frame = Frame(
     root,
     bg='red', # Change later to black
-    width=1020,
+    width=settings.WIDTH,
     height= Utils.height_prct(25)
 )
 top_frame.place(x=0, y=0)
