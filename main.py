@@ -14,8 +14,8 @@ top_frame = Frame(
     bg='red', # Change later to black
     width=1020,
     height=180
-    
 )
+top_frame.place(x=0, y=0)
 
 # Run the window
 root.mainloop()
