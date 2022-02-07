@@ -16,6 +16,12 @@ top_frame = Frame(
     height=180
 )
 top_frame.place(x=0, y=0)
+left_frame = Frame(
+    root,
+    bg='yellow', # Change  latter to black
+    width=255,
+    height=540
+)
 
 # Run the window
 root.mainloop()
