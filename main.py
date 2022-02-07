@@ -10,7 +10,7 @@ root.geometry(f'{settings.WIDTH}x{settings.HEIGHT}')
 root.title("Minesweeper Game")
 root.resizable(False, False)
 
-# create game frame
+# create top frame
 top_frame = Frame(
     root,
     bg='red', # Change later to black
@@ -18,6 +18,8 @@ top_frame = Frame(
     height= Utils.height_prct(25)
 )
 top_frame.place(x=0, y=0)
+
+# create left frame
 left_frame = Frame(
     root,
     bg='yellow', # Change  latter to black
@@ -25,6 +27,14 @@ left_frame = Frame(
     height=Utils.height_prct(75)
 )
 left_frame.place(x=0, y=Utils.height_prct(25))
+
+# create center frame
+center_frame = Frame(
+    root,
+    bg='Pink',
+    width=Utils.width_prct(75),
+    height=Utils.height_prct(75)
+)
 
 # Run the window
 root.mainloop()
