@@ -1,10 +1,11 @@
 from tkinter import *
+import settings
 
 root = Tk()
 
 # Over ride the settings of the windows
 root.configure(bg="black")
-root.geometry('1020x720')
+root.geometry(f'{settings.WIDTH}x{settings.HEIGHT}')
 root.title("Minesweeper Game")
 root.resizable(False, False)
 
