@@ -43,8 +43,8 @@ for x in range(settings.GRID_SIZE): #0,1,2,3,4
         c = Cell()
         c.create_btn_object(center_frame)
         c.cell_btn_object.grid(
-            row=x,
-            column=y
+            row=y,
+            column=x
         )
 
 # Run the window
