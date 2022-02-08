@@ -45,5 +45,12 @@ c1.cell_btn_object.grid(
     column=0
 )
 
+c2 = Cell()
+c2.create_btn_object(center_frame)
+c2.cell_btn_object.grid(
+    row=0,
+    column=1
+)
+
 # Run the window
 root.mainloop()
