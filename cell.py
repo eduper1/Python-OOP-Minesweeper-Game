@@ -1,5 +1,7 @@
 from tkinter import Button
 import random
+import settings
+
 class Cell:
     all = []
     def __init__(self, x, y, is_mine=False):
@@ -36,7 +38,7 @@ class Cell:
     def randomize_mines():
         picked_cells = random.sample(
             Cell.all,
-            9
+            settings.MINES_COUNT
         )
         print(picked_cells)
         for picked_cell in picked_cells:
