@@ -46,6 +46,8 @@ for x in range(settings.GRID_SIZE): #0,1,2,3,4
             row=y,
             column=x
         )
+        
+print(Cell.all)
 
 # Run the window
 root.mainloop()
