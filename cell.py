@@ -1,15 +1,17 @@
 from tkinter import Button
 class Cell:
-    def __init__(self, is_mine=False):
+    def __init__(self, x, y, is_mine=False):
         self.is_mine = is_mine
         self.cell_btn_object = None
+        self.x = x
+        self.y = y
     
     def create_btn_object(self, location):
         btn = Button(
             location,
             width=12,
             height=4,
-            text='text'
+            text=f'{self.x}, {self.y}'
         )
         # left click
         btn.bind('<Button-1>', self.left_click_actions) # event trigger, DON"T call the method, just pass it as a reference
