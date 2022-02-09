@@ -47,7 +47,9 @@ for x in range(settings.GRID_SIZE): #0,1,2,3,4
             column=x
         )
         
-print(Cell.all)
+Cell.randomize_mines()
+for c in Cell.all:
+    print(c.is_mine)
 
 # Run the window
 root.mainloop()
