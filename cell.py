@@ -1,4 +1,5 @@
 from tkinter import Button
+import random
 class Cell:
     all = []
     def __init__(self, x, y, is_mine=False):
@@ -33,4 +34,13 @@ class Cell:
         
     @staticmethod
     def randomize_mines():
-        pass
+        picked_cells = random.sample(
+            Cell.all,
+            9
+        )
+        print(picked_cells)
+        for picked_cell in picked_cells:
+            picked_cell.is_mine= True
+    
+    def __repr__(self):
+        return f'Cell({self.x}, {self.y})'
