@@ -7,6 +7,8 @@ class Cell:
     def create_btn_object(self, location):
         btn = Button(
             location,
+            width=12,
+            height=4,
             text='text'
         )
         # left click
