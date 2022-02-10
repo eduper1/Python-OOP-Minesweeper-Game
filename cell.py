@@ -3,8 +3,10 @@ from tkinter import Button
 import random
 import settings
 
+
 class Cell:
     all = []
+
     def __init__(self, x, y, is_mine=False):
         self.is_mine = is_mine
         self.cell_btn_object = None
@@ -13,7 +15,7 @@ class Cell:
 
         # Append all objects in Cell.all list
         Cell.all.append(self)
-        
+
     def create_btn_object(self, location):
         btn = Button(
             location,
@@ -22,36 +24,47 @@ class Cell:
             text=f'{self.x}, {self.y}'
         )
         # left click
-        btn.bind('<Button-1>', self.left_click_actions) # event trigger, DON"T call the method, just pass it as a reference
+        # event trigger, DON"T call the method, just pass it as a reference
+        btn.bind('<Button-1>', self.left_click_actions)
         # right click
         btn.bind('<Button-3>', self.right_click_actions)
         self.cell_btn_object = btn
-    
+
     def left_click_actions(self, event):
         if self.is_mine:
             self.show_mine()
         else:
             self.show_cell()
-    
+
     def get_cell_by_axis(self, x, y):
         # return a cell object based on values: x and y
         for cell in Cell.all:
             if cell.x == x and cell.y == y:
                 return cell
-    
+
     def show_cell(self):
-        print(self.get_cell_by_axis(0,0))
-    
+        surrounded_cell = [
+            self.get_cell_by_axis(self.x + 1, self.y),
+            self.get_cell_by_axis(self.x - 1, self.y),
+            self.get_cell_by_axis(self.x, self.y + 1),
+            self.get_cell_by_axis(self.x + 1, self.y + 1),
+            self.get_cell_by_axis(self.x - 1, self.y + 1),
+            self.get_cell_by_axis(self.x - 1, self.y + 1),
+            self.get_cell_by_axis(self.x - 1, self.y - 1),
+            self.get_cell_by_axis(self.x + 1, self.y - 1), 
+        ]
+        print(surrounded_cell)
+
     def show_mine(self):
         # a logic to interrupt the game and display a message that the player lost
         self.cell_btn_object.configure(
             bg="red"
         )
-        
+
     def right_click_actions(self, event):
         print(event)
         print('I am right clicked')
-        
+
     @staticmethod
     def randomize_mines():
         picked_cells = random.sample(
@@ -60,7 +73,7 @@ class Cell:
         )
         print(picked_cells)
         for picked_cell in picked_cells:
-            picked_cell.is_mine= True
-    
+            picked_cell.is_mine = True
+
     def __repr__(self):
         return f'Cell({self.x}, {self.y})'
