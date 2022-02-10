@@ -41,9 +41,9 @@ class Cell:
         for cell in Cell.all:
             if cell.x == x and cell.y == y:
                 return cell
-
-    def show_cell(self):
-        surrounded_cells = [
+    @property
+    def surrounded_cells(self):
+        cells = [
             self.get_cell_by_axis(self.x + 1, self.y),
             self.get_cell_by_axis(self.x - 1, self.y),
             self.get_cell_by_axis(self.x, self.y + 1),
@@ -53,7 +53,9 @@ class Cell:
             self.get_cell_by_axis(self.x - 1, self.y - 1),
             self.get_cell_by_axis(self.x + 1, self.y - 1), 
         ]
-        surrounded_cells = [cell for cell in surrounded_cells if cell is not None]
+        cells = [cell for cell in cells if cell is not None]
+
+    def show_cell(self):
         print(surrounded_cells)
 
     def show_mine(self):
