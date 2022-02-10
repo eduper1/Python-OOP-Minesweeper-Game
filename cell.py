@@ -1,3 +1,4 @@
+from select import select
 from tkinter import Button
 import random
 import settings
@@ -27,8 +28,14 @@ class Cell:
         self.cell_btn_object = btn
     
     def left_click_actions(self, event):
-        print(event)
-        print('I am left clicked')
+        if self.is_mine:
+            self.show_mine()
+    
+    def show_mine(self):
+        # a logic to interrupt the game and display a message that the player lost
+        self.cell_btn_object.configure(
+            bg="red"
+        )
         
     def right_click_actions(self, event):
         print(event)
