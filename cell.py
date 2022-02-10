@@ -43,7 +43,7 @@ class Cell:
                 return cell
 
     def show_cell(self):
-        surrounded_cell = [
+        surrounded_cells = [
             self.get_cell_by_axis(self.x + 1, self.y),
             self.get_cell_by_axis(self.x - 1, self.y),
             self.get_cell_by_axis(self.x, self.y + 1),
@@ -53,7 +53,8 @@ class Cell:
             self.get_cell_by_axis(self.x - 1, self.y - 1),
             self.get_cell_by_axis(self.x + 1, self.y - 1), 
         ]
-        print(surrounded_cell)
+        surrounded_cells = [cell for cell in surrounded_cells if cell is not None]
+        print(surrounded_cells)
 
     def show_mine(self):
         # a logic to interrupt the game and display a message that the player lost
