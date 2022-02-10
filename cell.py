@@ -33,8 +33,14 @@ class Cell:
         else:
             self.show_cell()
     
+    def get_cell_by_axis(self, x, y):
+        # return a cell object based on values: x and y
+        for cell in Cell.all:
+            if cell.x == x and cell.y == y:
+                return cell
+    
     def show_cell(self):
-        pass
+        print(self.get_cell_by_axis(0,0))
     
     def show_mine(self):
         # a logic to interrupt the game and display a message that the player lost
