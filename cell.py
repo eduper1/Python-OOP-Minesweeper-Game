@@ -19,7 +19,7 @@ class Cell:
             location,
             width=12,
             height=4,
-            #text=f'{self.x}, {self.y}'
+            text=f'{self.x}, {self.y}'
         )
         # left click
         btn.bind('<Button-1>', self.left_click_actions) # event trigger, DON"T call the method, just pass it as a reference
@@ -30,6 +30,11 @@ class Cell:
     def left_click_actions(self, event):
         if self.is_mine:
             self.show_mine()
+        else:
+            self.show_cell()
+    
+    def show_cell(self):
+        pass
     
     def show_mine(self):
         # a logic to interrupt the game and display a message that the player lost
