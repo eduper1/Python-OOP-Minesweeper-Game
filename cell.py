@@ -19,7 +19,7 @@ class Cell:
             location,
             width=12,
             height=4,
-            text=f'{self.x}, {self.y}'
+            #text=f'{self.x}, {self.y}'
         )
         # left click
         btn.bind('<Button-1>', self.left_click_actions) # event trigger, DON"T call the method, just pass it as a reference
