@@ -47,9 +47,10 @@ class Cell:
             self.get_cell_by_axis(self.x + 1, self.y),
             self.get_cell_by_axis(self.x - 1, self.y),
             self.get_cell_by_axis(self.x, self.y + 1),
+            self.get_cell_by_axis(self.x, self.y - 1),
             self.get_cell_by_axis(self.x + 1, self.y + 1),
             self.get_cell_by_axis(self.x - 1, self.y + 1),
-            self.get_cell_by_axis(self.x - 1, self.y + 1),
+            #self.get_cell_by_axis(self.x - 1, self.y + 1),
             self.get_cell_by_axis(self.x - 1, self.y - 1),
             self.get_cell_by_axis(self.x + 1, self.y - 1), 
         ]
