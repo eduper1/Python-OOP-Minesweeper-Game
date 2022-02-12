@@ -4,6 +4,7 @@ import random
 import settings
 
 
+
 class Cell:
     all = []
     cell_count = settings.CELL_COUNT
@@ -97,7 +98,12 @@ class Cell:
                 Cell.cell_count_label_obj.configure(
                     text=f'Cells left: {Cell.cell_count}'
                 )
-        
+
+            # if not mine cell opened after a highlight; turn it back normal/system color turned
+            self.cell_btn_object.configure(
+                bg='lightGrey'
+            )
+            
         #   Mark the cell as Open(USE THIS LINE AS THE LAST LINE OF THIS METHOD)
         self.is_open = True
 
