@@ -1,3 +1,4 @@
+import ctypes
 from tkinter import Button
 from tkinter import Label
 import random
@@ -56,7 +57,11 @@ class Cell:
                 for cell_obj in self.surrounded_cells:
                     cell_obj.show_cell()
             self.show_cell()
-            
+        
+        # if Mines count == to the cell left count, player won
+        if Cell.cell_count == settings.MINES_COUNT:
+            ctypes.windll.user32.MessageBoxW(0, 'Congrats! You won the game.', 'Game over!', 0)
+        
         # unbind once cell is opened
         self.cell_btn_object.unbind("<Button-1>")
         self.cell_btn_object.unbind("<Button-3>")
