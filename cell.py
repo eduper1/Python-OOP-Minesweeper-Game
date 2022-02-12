@@ -56,6 +56,10 @@ class Cell:
                 for cell_obj in self.surrounded_cells:
                     cell_obj.show_cell()
             self.show_cell()
+            
+        # unbind once cell is opened
+        self.cell_btn_object.unbind("<Button-1>")
+        self.cell_btn_object.unbind("<Button-3>")
 
     def get_cell_by_axis(self, x, y):
         # return a cell object based on values: x and y
