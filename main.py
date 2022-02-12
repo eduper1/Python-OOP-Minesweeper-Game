@@ -1,4 +1,7 @@
+from ctypes import util
 from tkinter import *
+
+from matplotlib.pyplot import text
 from cell import Cell
 import settings
 import Utils
@@ -20,6 +23,17 @@ top_frame = Frame(
 )
 top_frame.place(x=0, y=0)
 
+game_title = Label(
+    top_frame,
+    text="FAIZA GAME",
+    bg='red',
+    fg="White",
+    font=('serrif', 28)
+)
+game_title.place(
+    x=Utils.width_prct(40),
+    y=Utils.height_prct(8)
+)
 # create left frame
 left_frame = Frame(
     root,
